@@ -2,12 +2,13 @@ const asyncHandler = require('express-async-handler')
 const { globalAgent } = require('http')
 
 const Workout = require('../models/workoutModel')
+const User = require('../models/userModel')
 
 //  Get workouts (hopefully specific users workouts)
 // Get /api/workouts
 // access Private 
 const getWorkouts = asyncHandler (async (req, res) => {
-  const workouts = await Workout.find()
+  const workouts = await Workout.find({ user: req.user.id })
 
   res.status(200).json(workouts)
 })
@@ -23,7 +24,8 @@ const setWorkout = asyncHandler (async (req, res) => {
   }
 
   const workout = await Workout.create({
-  text: req.body.text
+  text: req.body.text,
+  user: req.user.id,
 })
 
   res.status(200).json(workout)
@@ -32,18 +34,26 @@ const setWorkout = asyncHandler (async (req, res) => {
 // Update workout (hopefully specific users workouts)
 // PUT /api/workouts/:id
 // access Private 
-const updateWorkout = asyncHandler(async (req, res) => {
+const updateWorkout = asyncHandler (async (req, res) => {
   const workout = await Workout.findById(req.params.id)
 
+  // check for workout??
   if(!workout) {
     res.status(400)
     throw new Error ('Workout not found')
   }
 
-  const updatedWorkout = await Workout.findByIdAndUpdate(req.params.id, req.body, {new: true,
-  })
+   // Check for user
+   if (!req.user) {
+    res.status(401)
+    throw new Error('User not found')
+  }
+})
 
-  res.status(200).json(updateWorkout)
+  // const updatedWorkout = Workout.findByIdAndUpdate(req.params.id, req.body, {new: true,
+  // })
+  // res.status(200).json(updateWorkout)
+
 
 // Delete workout (hopefully specific users workouts)
 //  Delete /api/workouts/:id
@@ -60,6 +70,10 @@ const deleteWorkout = asyncHandler (async (req, res) => {
 
   res.status(200).json({ id: req.params.id })
 })
+
+// const generateToken = (id) => {
+//   return jwt 
+// }
 
 
 module.exports = {

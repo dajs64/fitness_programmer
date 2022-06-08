@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/dajs64/fitness_programmer#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dot": "^1.1.3",
     "dotenv": "^16.0.1",
     "env": "^0.0.2",
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.5"
   },
   "devDependencies": {
