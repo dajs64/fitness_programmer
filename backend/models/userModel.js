@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
   name:{
     type: String,
-    require: [true, 'Please add a name']
+    require: [true, 'Please add a name'],
   },
   email:{
     type: String,
@@ -13,10 +13,6 @@ const userSchema = mongoose.Schema({
   passwork:{
     type: String,
     require: [true, 'Please add password'],
-  },
-  name:{
-    type: String,
-    require: [true, 'Please add a name']
   },
 },
 {
