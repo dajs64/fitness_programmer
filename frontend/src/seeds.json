@@ -1,0 +1,20 @@
+[
+  {
+      "id": 1,
+      "Name": "Push up",
+      "image": "https://cdn.vectorstock.com/i/1000x1000/38/30/woman-in-tadasana-or-mountain-yoga-pose-vector-28023830.webp",
+      "description": "Push off the ground straight line from head to heels keep elbows close to ribcage",
+  },
+  {
+      "id": 2,
+      "Name": "Squat",
+      "image": "https://cdn.vectorstock.com/i/1000x1000/48/68/meditating-yogi-man-in-pranamasana-hatha-yoga-vector-38214868.webp",
+      "description": "Feet hip width apart, squeeze core, keep heels planted on the ground as you squat down",
+  },
+  {
+      "id": 3,
+      "Name": "Sit up",
+      "image": "https://blog.talkcharge.com/wp-content/uploads/2020/12/02-1.jpg",
+      "description": "Feet planted on the ground, hands to the side of the head, bring chest through the legs refrain from hunching over",
+  }
+]

@@ -8,7 +8,7 @@ const User = require('../models/userModel')
 // Get /api/workouts
 // access Private 
 const getWorkouts = asyncHandler (async (req, res) => {
-  const workouts = await Workout.find({ user: req.user.id })
+  const workouts = await Workout.find({})
 
   res.status(200).json(workouts)
 })
@@ -25,7 +25,7 @@ const setWorkout = asyncHandler (async (req, res) => {
 
   const workout = await Workout.create({
   text: req.body.text,
-  user: req.user.id,
+  // user: req.user._id,
 })
 
   res.status(200).json(workout)

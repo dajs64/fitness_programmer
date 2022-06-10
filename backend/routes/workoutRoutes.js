@@ -7,12 +7,12 @@ const {
   deleteWorkout, 
 } = require('../controllers/workoutController')
 
-const { protect } = require('../middleware/authMiddleware')
+// const = require('../middleware/authMiddleware')
 
-router.route('/').get(protect, getWorkouts)
-router.route('/').post(protect, setWorkout)
-router.route('/:id').put(protect, updateWorkout)
-router.route('/:id').delete(protect, deleteWorkout)
+router.route('/').get(getWorkouts)
+router.route('/').post(setWorkout)
+router.route('/:id').put(updateWorkout)
+router.route('/:id').delete(deleteWorkout)
 
 
 module.exports = router
