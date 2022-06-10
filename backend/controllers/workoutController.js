@@ -17,17 +17,38 @@ const getWorkouts = asyncHandler (async (req, res) => {
 // Post /api/workouts
 // access Private 
 const setWorkout = asyncHandler (async (req, res) => {
-  if(!req.body.text) {
+  if(!req.body) {
+    console.log("HERE",req.body)
     res.status(400)
-    throw new Error('Add a textfield')
+    // throw new Error('Add a textfield')
+
 
   }
 
   const workout = await Workout.create({
-  text: req.body.text,
+  name: req.body.name,
+  type: req.body.type,
+  duration: req.body.duration,
+  style: req.body.style,
   // user: req.user._id,
 })
 
+  res.status(200).json(workout)
+})
+const getWorkout = asyncHandler (async (req, res) => {
+  const workout = await Workout.findById(req.params.id)
+
+  // check for workout??
+  if(!workout) {
+    res.status(400)
+    throw new Error ('Workout not found')
+  }
+
+   // Check for user
+  //  if (!req.user) {
+  //   res.status(401)
+  //   throw new Error('User not found')
+  // }
   res.status(200).json(workout)
 })
 
@@ -81,4 +102,6 @@ module.exports = {
   setWorkout, 
   updateWorkout, 
   deleteWorkout, 
+  getWorkout,
+
 }

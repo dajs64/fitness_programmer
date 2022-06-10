@@ -46,17 +46,13 @@ function Main(props) {
                 <Route 
                     path='/' 
                     element={<Workout 
-                        Workout={workout} 
+                        workouts={workout} 
                         // createWorkout={createWorkout} 
                     />} 
                 />
                 <Route
                     path="/workout/:id"
-                    render={(rp) => (
-                        <Show
-                        {...rp}
-                        />
-                    )}
+                    element={<Show/>}
                 />
             </Routes>
         </main>

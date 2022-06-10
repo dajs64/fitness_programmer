@@ -7,10 +7,22 @@ const workoutSchema = mongoose.Schema(
   //    required: true,
   //    ref: 'User',
   //  }, 
-   text: {
+   name: {
      type: String,
      required: [true, 'Please add a text value']
-   }
+   },
+   type: {
+    type: String,
+    required: [true, 'Please add a text value']
+  },
+  duration: {
+    type: String,
+    required: [true, 'Please add a text value']
+  },
+  style: {
+    type: String,
+    required: [true, 'Please add a text value']
+  },
 }, 
 {
   timestamps: true
