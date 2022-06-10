@@ -7,7 +7,7 @@ import Show from "../pages/Show";
 function Main(props) {
     const [workout, setWorkout] = useState(null);
 
-    const URL = "http://localhost:8000/workouts/";
+    const URL = "http://localhost:5000/api/workouts/";
 
     // const getWorkout = () => {
     //     fetch(URL)
@@ -15,7 +15,7 @@ function Main(props) {
     //     .then(result => setWorkout(result))
     // }
     const getWorkout = async () => {
-        const response = await fetch("http://localhost:8000/api/workouts/")
+        const response = await fetch(URL)
         const data = await response.json()
         console.log(data)
         setWorkout(data)
