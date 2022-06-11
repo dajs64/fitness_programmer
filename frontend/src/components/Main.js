@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import Workout from "../pages/Workouts.js";
 import Show from "../pages/Show";
-
+import AddWorkout from "../pages/AddWorkout"
+// import new from "..pages/NewWorkout";
 function Main(props) {
     const [workout, setWorkout] = useState(null);
 
@@ -53,6 +54,10 @@ function Main(props) {
                 <Route
                     path="/workout/:id"
                     element={<Show/>}
+                />
+                <Route
+                    path="/add-workout"
+                    element={<AddWorkout/>}
                 />
             </Routes>
         </main>

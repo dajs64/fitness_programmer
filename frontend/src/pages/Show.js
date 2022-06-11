@@ -5,6 +5,7 @@ export default function Show (props) {
   const [workout, setWorkout] = useState(null);
   const params = useParams()  
   const URL = "http://localhost:5000/api/workouts/"+params.id;
+  
 
   // const getWorkout = () => {
   //     fetch(URL)
@@ -28,6 +29,8 @@ export default function Show (props) {
       <h2> {workout?.type} </h2>
       <h3> {workout?.duration} </h3>
       <h4> {workout?.style} </h4>
+      <h5> {workout?.difficulty} </h5>
+      <h6> {workout?.location} </h6>
     </div>
   )
 }

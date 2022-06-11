@@ -30,6 +30,8 @@ const setWorkout = asyncHandler (async (req, res) => {
   type: req.body.type,
   duration: req.body.duration,
   style: req.body.style,
+  difficulty: req.body.difficulty,
+  location: req.body.location,
   // user: req.user._id,
 })
 

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Global Variables */
+:root {
+  /* Colors */
+  --color-bg: #e4e4e4;
+  --color-dark: #313131;
+  --color-light: #ffffff;
+  --color-primary: #1A2EAD;
+  --color-secondary: #FA8257;
+  /* --color-lt-highlight: #85FA33;
+  --color-dk-highlight: #7CAD58; */
+
+  /* Transition */
+  --transition: all 0.3s ease-in-out;
+
+  /* Widths --> Media Queries*/
+  --container-width-lg: 80%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+
+  /* Footer Height */
+  --footer-height: 28rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-dark);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.container {
+  width: --container-width-lg;
+  /* Position in the middle */
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-dk-highlight);
+}

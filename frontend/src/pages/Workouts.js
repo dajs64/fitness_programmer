@@ -4,18 +4,22 @@ import { Link } from 'react-router-dom';
 function workout(props) {
     console.log(props)
     const loaded = () => {
-        return props.workouts.map((workout) => (
-                <div key={workout._id} className='workout'>
+        return ( 
+            <div>
+                {props.workouts.map((workout) => (
+                    <div key={workout._id} className='workout'>
                     <Link to={`/workout/${workout._id}`}>
                         <h1>{workout.name}</h1>
-                        <img src={workout.image} alt={workout.name} />
+                        {/* <img src={workout.image} alt={workout.name} /> */}
                         {/* <h3>{workout.title}</h3>
                         <h4>{workout.type}</h4>
                         <h5>{workout.duration}</h5> */}
                     </Link>
                 </div>
-            )
-        )
+                ))}
+                <Link to={'/add-workout'}>Create Workout</Link>
+            </div>
+        ) 
     }
 
     const loading = () => {
