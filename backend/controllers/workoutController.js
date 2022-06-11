@@ -17,19 +17,17 @@ const getWorkouts = asyncHandler (async (req, res) => {
 // Post /api/workouts
 // access Private 
 const setWorkout = asyncHandler (async (req, res) => {
+  console.log("SUCCESS")
   if(!req.body) {
     console.log("HERE",req.body)
     res.status(400)
     // throw new Error('Add a textfield')
-
-
   }
 
   const workout = await Workout.create({
   name: req.body.name,
   type: req.body.type,
   duration: req.body.duration,
-  style: req.body.style,
   difficulty: req.body.difficulty,
   location: req.body.location,
   // user: req.user._id,

@@ -6,7 +6,7 @@ import Show from "../pages/Show";
 import AddWorkout from "../pages/AddWorkout"
 // import new from "..pages/NewWorkout";
 function Main(props) {
-    const [workout, setWorkout] = useState(null);
+    const [workouts, setWorkouts] = useState(null);
 
     const URL = "http://localhost:5000/api/workouts/";
 
@@ -15,41 +15,37 @@ function Main(props) {
     //     .then(response => response.json())
     //     .then(result => setWorkout(result))
     // }
-    const getWorkout = async () => {
+    const getWorkouts = async () => {
         const response = await fetch(URL)
         const data = await response.json()
-        console.log(data)
-        setWorkout(data)
+        // console.log(data)
+        setWorkouts(data)
     } 
 
-
-    // const createWorkout = async (workout) => {
-    //     // make post request to create a workout
-    //     await fetch(URL, {
-    //         method: "post",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-	// 	        body: JSON.stringify(Workout),
-    //     });
-    //     // update list of workouts
-    //     getWorkout();
-    // };
+    const createWorkout = async (workout) => {
+        console.log("counterstrike")
+        // make post request to create a workout
+        await fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+		        body: JSON.stringify(workout),
+        });
+        // update list of workouts
+        getWorkouts();
+    };
 
     // useEffect(() => getWorkout(), []);
     useEffect(() => {
-        getWorkout()
+        getWorkouts()
     }, [])
-
     return (
         <main>
             <Routes>
                 <Route 
                     path='/' 
-                    element={<Workout 
-                        workouts={workout} 
-                        // createWorkout={createWorkout} 
-                    />} 
+                    element={<Workout workouts={workouts}/>} 
                 />
                 <Route
                     path="/workout/:id"
@@ -57,7 +53,7 @@ function Main(props) {
                 />
                 <Route
                     path="/add-workout"
-                    element={<AddWorkout/>}
+                    element={<AddWorkout createWorkout={createWorkout}/>}
                 />
             </Routes>
         </main>

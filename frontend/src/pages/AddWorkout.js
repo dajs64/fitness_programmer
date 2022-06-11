@@ -6,8 +6,10 @@ function Workout(props) {
     // state to hold formData
     const [newForm, setNewForm] = useState({
         name: "",
-        image: "",
-        title: "",
+        type: "",
+        duration: "",
+        difficulty: "",
+        location: "",
     });
 
     // handleChange function for form
@@ -18,12 +20,12 @@ function Workout(props) {
     // handle submit function for form
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(newForm)
         props.createWorkout(newForm);
         setNewForm({
             name: "",
             type: "",
             duration: "",
-            style: "",
             difficulty: "",
             location: "",
         });
@@ -55,19 +57,33 @@ function Workout(props) {
                 />
                 <input
                     type="text"
-                    value={newForm.image}
-                    name="image"
-                    placeholder="image URL"
+                    value={newForm.type}
+                    name="type"
+                    placeholder="type"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
-                    value={newForm.title}
-                    name="title"
-                    placeholder="title"
+                    value={newForm.duration}
+                    name="duration"
+                    placeholder="duration"
                     onChange={handleChange}
                 />
-                <input type="submit" value="Create Workout" />
+                <input
+                    type="text"
+                    value={newForm.difficulty}
+                    name="difficulty"
+                    placeholder="difficulty"
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    value={newForm.location}
+                    name="location"
+                    placeholder="location"
+                    onChange={handleChange}
+                />
+                <button type="submit">Create Workout</button>
             </form>
             {props.workout ? loaded() : loading()}
         </section>

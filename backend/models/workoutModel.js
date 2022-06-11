@@ -19,10 +19,6 @@ const workoutSchema = mongoose.Schema(
     type: String,
     required: [true, 'Please add a text value']
   },
-  style: {
-    type: String,
-    required: [true, 'Please add a text value']
-  },
   difficulty: {
     type: String,
     required: [true, 'Please add a text value']
