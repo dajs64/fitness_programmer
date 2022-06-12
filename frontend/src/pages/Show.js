@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function Show (props) {
   const [workout, setWorkout] = useState(null);
   const params = useParams()  
   const URL = "http://localhost:5000/api/workouts/"+params.id;
+  const navigate = useNavigate()
   
 
   // const getWorkout = () => {
@@ -22,6 +23,21 @@ export default function Show (props) {
     getWorkout()
 }, [])
 
+const deleteWorkout = async e => {
+  e.preventDefault()
+  const deletedWorkout=await fetch(URL, {
+      method: "delete",
+      })
+      console.log(deletedWorkout)
+      props.getWorkouts()
+      navigate("/")
+}
+
+useEffect(() => {
+  getWorkout()
+}, [])
+
+
   console.log("WORKOUT",workout)
   return(
     <div>
@@ -31,6 +47,11 @@ export default function Show (props) {
       <h4> {workout?.style} </h4>
       <h5> {workout?.difficulty} </h5>
       <h6> {workout?.location} </h6>
+      <div>
+          <form onSubmit={deleteWorkout}>
+            <button>Delete Workout</button>
+          </form>
+      </div>
     </div>
   )
 }

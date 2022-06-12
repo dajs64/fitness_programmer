@@ -84,6 +84,7 @@ function Workout(props) {
                     onChange={handleChange}
                 />
                 <button type="submit">Create Workout</button>
+                <button type="delete">Delete Workout</button>
             </form>
             {props.workout ? loaded() : loading()}
         </section>

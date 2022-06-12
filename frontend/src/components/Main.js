@@ -1,12 +1,16 @@
+import { useParams, useNavigate } from "react-router-dom";
 import React, { Component }  from 'react';
 import { useEffect, useState } from "react";
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import Workout from "../pages/Workouts.js";
 import Show from "../pages/Show";
 import AddWorkout from "../pages/AddWorkout"
+// import DeleteWorkout from"../pages/DeleteWorkout"
+
 // import new from "..pages/NewWorkout";
 function Main(props) {
     const [workouts, setWorkouts] = useState(null);
+    const navigate = useNavigate()
 
     const URL = "http://localhost:5000/api/workouts/";
 
@@ -35,11 +39,28 @@ function Main(props) {
         // update list of workouts
         getWorkouts();
     };
+    const deleteWorkout = async (workout) => {
+        console.log("counterstrike")
+        // make post request to create a workout
+        await fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+		        body: JSON.stringify(workout),
+        });
+        // update list of workouts
+        getWorkouts();
+    };
+
+
+
+
 
     // useEffect(() => getWorkout(), []);
     useEffect(() => {
         getWorkouts()
-    }, [])
+    }, [navigate?.location?.path])
     return (
         <main>
             <Routes>
@@ -49,12 +70,16 @@ function Main(props) {
                 />
                 <Route
                     path="/workout/:id"
-                    element={<Show/>}
+                    element={<Show getWorkouts={getWorkouts}/>}
                 />
                 <Route
                     path="/add-workout"
                     element={<AddWorkout createWorkout={createWorkout}/>}
                 />
+                {/* <Route
+                    path="/delete-workout"
+                    element={<DeleteWorkout deleteWorkout={deleteWorkout}/>}
+                /> */}
             </Routes>
         </main>
     );

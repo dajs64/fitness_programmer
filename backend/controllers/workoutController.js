@@ -80,7 +80,7 @@ const updateWorkout = asyncHandler (async (req, res) => {
 //  Delete /api/workouts/:id
 // access Private 
 const deleteWorkout = asyncHandler (async (req, res) => {
-  const workout = await Workout.findById(req.params.id)
+  const workout = await Workout.findByIdAndDelete(req.params.id)
 
   if(!workout) {
     res.status(400)
