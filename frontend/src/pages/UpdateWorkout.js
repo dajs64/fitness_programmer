@@ -21,16 +21,6 @@ export default function Show (props) {
     getWorkout()
 }, [])
 
-// const deleteWorkout = async e => {
-//   e.preventDefault()
-//   const deletedWorkout=await fetch(URL, {
-//       method: "delete",
-//       })
-//       console.log(deletedWorkout)
-//       props.getWorkouts()
-//       navigate("/")
-// }
-
 const handleUpdateClick = async (e) => {
   console.log('Update Clicked...', workout);
   e.preventDefault();

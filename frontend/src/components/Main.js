@@ -40,19 +40,23 @@ function Main(props) {
     // update list of workouts
     getWorkouts();
   };
-  const deleteWorkout = async (workout) => {
-    console.log("counterstrike");
-    // make post request to create a workout
-    await fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(workout),
-    });
-    // update list of workouts
-    getWorkouts();
-  };
+  // const deleteWorkout = async (workout) => {
+  //   console.log("counterstrike");
+  //   // make post request to create a workout
+  //   await fetch(URL, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(workout),
+  //   });
+  //   // update list of workouts
+  //   getWorkouts();
+  // };
+
+  // const deletedWorkout = (workout) => {
+  //   console.log('method man')
+  // }
 
   // useEffect(() => getWorkout(), []);
   useEffect(() => {

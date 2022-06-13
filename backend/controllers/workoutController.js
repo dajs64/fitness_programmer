@@ -104,9 +104,6 @@ const deleteWorkout = asyncHandler (async (req, res) => {
   res.status(200).json({ id: req.params.id })
 })
 
-// const generateToken = (id) => {
-//   return jwt 
-// }
 
 
 module.exports = {

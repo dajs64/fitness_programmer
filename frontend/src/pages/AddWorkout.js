@@ -43,7 +43,7 @@ function Workout(props) {
     };
 
     const loading = () => {
-        return <h1>Body loading....</h1>;
+        return <h1>...</h1>;
     };
     return (
         <section>

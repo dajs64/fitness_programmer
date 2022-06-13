@@ -40,7 +40,7 @@ const handleUpdateClick = (e) => {
 
   console.log("WORKOUT", workout)
   return(
-    <div className="cardshow">
+    <div className="card">
       <Card style={{ width: '21rem' }}className="mt-0 mb-4">
       <Card.Body>
         <Card.Title className="my-auto"> {workout?.name}</Card.Title>
@@ -58,7 +58,7 @@ const handleUpdateClick = (e) => {
         {workout?.location}
         </Card.Text>
         <Button variant="info"onClick={handleUpdateClick}>Update Workout</Button>{' '}
-        <Button variant="danger"onSubmit={deleteWorkout}>Delete Workout</Button>{' '}
+        <Button variant="danger"onClick={deleteWorkout}>Delete Workout</Button>{' '}
       </Card.Body>
     </Card>
     </div>
