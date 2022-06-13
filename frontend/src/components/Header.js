@@ -1,11 +1,12 @@
 import './Header.css'
 import { Link } from "react-router-dom";
+import Logo from "../components/workoutlogo.png";
 
 function Header(props) {
     return (
         <nav className="nav">
             <Link to="/">
-                <div className='header'>Workout App</div>
+                <img src={Logo} className="logo"/>
             </Link>
         </nav>
     );

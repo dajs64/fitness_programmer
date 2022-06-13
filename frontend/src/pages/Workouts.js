@@ -8,16 +8,12 @@ function workout(props) {
             <div>
                 {props.workouts.map((workout) => (
                     <div key={workout._id} className='workout'>
-                    <Link to={`/workout/${workout._id}`}>
+                    <Link to={`/workout/${workout._id}`} className='workoutlist'>
                         <h1>{workout.name}</h1>
-                        {/* <img src={workout.image} alt={workout.name} /> */}
-                        {/* <h3>{workout.title}</h3>
-                        <h4>{workout.type}</h4>
-                        <h5>{workout.duration}</h5> */}
                     </Link>
                 </div>
                 ))}
-                <Link to={'/add-workout'}>Create Workout</Link>
+                <Link to={'/add-workout'} className="create">Create Workout</Link>
             </div>
         ) 
     }

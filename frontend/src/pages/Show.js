@@ -1,5 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { alignPropType } from "react-bootstrap/esm/types";
 
 export default function Show (props) {
   const [workout, setWorkout] = useState(null);
@@ -7,12 +10,6 @@ export default function Show (props) {
   const URL = "http://localhost:5000/api/workouts/"+params.id;
   const navigate = useNavigate()
   
-
-  // const getWorkout = () => {
-  //     fetch(URL)
-  //     .then(response => response.json())
-  //     .then(result => setWorkout(result))
-  // }
   const getWorkout = async () => {
       const response = await fetch(URL)
       const data = await response.json()
@@ -43,19 +40,30 @@ const handleUpdateClick = (e) => {
 
   console.log("WORKOUT", workout)
   return(
-    <div>
-      <h1> {workout?.name} </h1>
-      <h2> {workout?.type} </h2>
-      <h3> {workout?.duration} </h3>
-      <h4> {workout?.style} </h4>
-      <h5> {workout?.difficulty} </h5>
-      <h6> {workout?.location} </h6>
-      <button onClick={handleUpdateClick}>Update Workout</button>
-      <div>
-          <form onSubmit={deleteWorkout}>
-            <button>Delete Workout</button>
-          </form>
-      </div>
+    <div className="cardshow">
+      <Card style={{ width: '21rem' }}className="mt-0 mb-4">
+      <Card.Body>
+        <Card.Title className="my-auto"> {workout?.name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{workout?.type}</Card.Subtitle>
+        <Card.Text>
+        {workout?.duration} 
+        </Card.Text>
+        <Card.Text>
+        {workout?.style}
+        </Card.Text>
+        <Card.Text>
+        {workout?.difficulty}
+        </Card.Text>
+        <Card.Text>
+        {workout?.location}
+        </Card.Text>
+        <Button variant="info"onClick={handleUpdateClick}>Update Workout</Button>{' '}
+        <Button variant="danger"onSubmit={deleteWorkout}>Delete Workout</Button>{' '}
+      </Card.Body>
+    </Card>
     </div>
   )
+
 }
+
+// export default TextExample;

@@ -47,7 +47,7 @@ function Workout(props) {
     };
     return (
         <section>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="createworkoutform">
                 <input
                     type="text"
                     value={newForm.name}
@@ -84,7 +84,7 @@ function Workout(props) {
                     onChange={handleChange}
                 />
                 <div className="submit">
-                <button type="submit">Create Workout</button>
+                <button type="submit" className="create">Create Workout</button>
                 </div>
                 {/* <button type="delete">Delete Workout</button> */}
             </form>

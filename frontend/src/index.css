@@ -19,7 +19,7 @@
   --color-bg: #e4e4e4;
   --color-dark: #313131;
   --color-light: #ffffff;
-  --color-primary: #1A2EAD;
+  --color-primary: rgb(115,82,154);
   --color-secondary: #FA8257;
   /* --color-lt-highlight: #85FA33;
   --color-dk-highlight: #7CAD58; */
@@ -89,9 +89,15 @@ a:hover {
 
 .workout{
   display: flex;
-  justify-content: left;
-  align-content: left;
-  font-size: 20px;
+  justify-content: center;
+  align-content: center;
+  font-size: 30px;
+  background-color: rgb(118,114,114,.5);
+  /* opacity: ; */
+  text-decoration: none;
+  margin: 10px;
+  border-radius: 10px;
+  
 }
 
 .header {
@@ -100,4 +106,52 @@ a:hover {
   border: 2px;
   border-color: #fcfefe;
   border-style: solid;
+}
+
+.title{
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  height: 50vh;
+  width: 30vw;
+}
+
+.workoutlist {
+  text-decoration: none;
+}
+
+.create {
+ margin-top: 3%;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ padding: 5px;
+ border-radius: 10px;
+ background-color: #fa8257b4;
+}
+
+.createworkoutform {
+  display: flex;
+  flex-direction: column;
+}
+.createworkoutform, input {
+  margin: 8px auto;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.cardshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
