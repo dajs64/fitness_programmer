@@ -49,6 +49,9 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(254,2,202,1) 1%, rgba(0,210,252,1) 60%);
+
 }
 
 .navbar {
@@ -63,6 +66,7 @@ body {
   /* Position in the middle */
   margin: 0 auto;
   border: #FA8257;
+
 }
 
 h1,
@@ -90,3 +94,10 @@ a:hover {
   font-size: 20px;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  border: 2px;
+  border-color: #fcfefe;
+  border-style: solid;
+}
