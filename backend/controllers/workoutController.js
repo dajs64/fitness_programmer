@@ -64,11 +64,23 @@ const updateWorkout = asyncHandler (async (req, res) => {
     throw new Error ('Workout not found')
   }
 
-   // Check for user
-   if (!req.user) {
-    res.status(401)
-    throw new Error('User not found')
+  if(!req.body) {
+    console.log("HERE",req.body)
+    res.status(400)
+    // throw new Error('Add a textfield')
   }
+
+await Workout.updateOne({
+  _id: req.body.id,
+},{
+  name: req.body.name,
+  type: req.body.type,
+  duration: req.body.duration,
+  difficulty: req.body.difficulty,
+  location: req.body.location,
+})
+res.status(200).json({ id: req.params.id })
+
 })
 
   // const updatedWorkout = Workout.findByIdAndUpdate(req.params.id, req.body, {new: true,

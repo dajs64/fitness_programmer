@@ -6,7 +6,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
+  border: 2px;
+  border-color: black;
   outline: 0;
   list-style: none;
   text-decoration: none;
@@ -50,10 +51,18 @@ body {
   font-size: 20px;
 }
 
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 80px 110px 80px;
+  grid-template-areas: "username . controls";
+  padding: 20px;
+}
+
 .container {
   width: --container-width-lg;
   /* Position in the middle */
   margin: 0 auto;
+  border: #FA8257;
 }
 
 h1,
@@ -73,3 +82,11 @@ a {
 a:hover {
   color: var(--color-dk-highlight);
 }
+
+.workout{
+  display: flex;
+  justify-content: left;
+  align-content: left;
+  font-size: 20px;
+}
+

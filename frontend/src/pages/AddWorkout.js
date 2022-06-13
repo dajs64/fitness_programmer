@@ -43,7 +43,7 @@ function Workout(props) {
     };
 
     const loading = () => {
-        return <h1>Loading...</h1>;
+        return <h1>Body loading....</h1>;
     };
     return (
         <section>
@@ -83,8 +83,10 @@ function Workout(props) {
                     placeholder="location"
                     onChange={handleChange}
                 />
+                <div className="submit">
                 <button type="submit">Create Workout</button>
-                <button type="delete">Delete Workout</button>
+                </div>
+                {/* <button type="delete">Delete Workout</button> */}
             </form>
             {props.workout ? loaded() : loading()}
         </section>

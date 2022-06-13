@@ -19,9 +19,6 @@ export default function Show (props) {
       console.log("DATA",data)
       setWorkout(data)
   } 
-  useEffect(() => {
-    getWorkout()
-}, [])
 
 const deleteWorkout = async e => {
   e.preventDefault()
@@ -37,8 +34,14 @@ useEffect(() => {
   getWorkout()
 }, [])
 
+const handleUpdateClick = (e) => {
+  console.log('Update Clicked...');
+  e.preventDefault();
 
-  console.log("WORKOUT",workout)
+  navigate(`/workout/${params.id}/edit`)
+}
+
+  console.log("WORKOUT", workout)
   return(
     <div>
       <h1> {workout?.name} </h1>
@@ -47,6 +50,7 @@ useEffect(() => {
       <h4> {workout?.style} </h4>
       <h5> {workout?.difficulty} </h5>
       <h6> {workout?.location} </h6>
+      <button onClick={handleUpdateClick}>Update Workout</button>
       <div>
           <form onSubmit={deleteWorkout}>
             <button>Delete Workout</button>
