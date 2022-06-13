@@ -43,12 +43,24 @@ npm i
 
 
  ## User Stories 
+ I have used about 4-6 different workout apps. Some for a short amount of time and some for a long amount of time. The goal of the app is for the user to browse workouts, get inspired, and then post a modified or completely new workout of their own. Obviously I don't have all the functionality of a true fitness app but for right now I have a good spring board for the future. Keeping the layout appealing and simple without a bunch of nonsense strewn throughout the page. Some workout apps just aren't user friendly. I've been using Wodify for the past few months and I have not had a pleasant experience with layout of functionality. Trainer eyes is another decent app with examples and many functions geared more for trainers. This app is to bridge the gap and give the general public the ability to grow a workout library of their own while getting ideas from what other people have done. 
+ 
+Iphone mentality all the way! KISS is the way to go. I am not an android user but I WAS! Too many options. I don't need all this functionality, while some like it others want to "keep it simple stupid". 
+  
   
  ## Code snippet 
   <img width="538" alt="Screen Shot 2022-06-13 at 10 22 49 AM" src="https://user-images.githubusercontent.com/100155199/173375661-0e66bb41-384d-48e1-98ce-86661692aea0.png">
-I had no styling and Jose helped me with bootstrap implimentation and now the coolest part of the app is not only the logo he created but also the card format! Jeff was the sevant behind the styling with all the little tricks to the trade!
- ## Whats next?
+I had no styling and Jose helped me with bootstrap implimentation and now the coolest part of the app is not only the logo he created but also the card format! Jeff was the sevant behind the styling with all the little tricks to the trade! Julia was the subtle encouragement! They gave their time last night to make me better and I am forever in their debt. Howey Josh and Brian you three know you have a special place in my heart so don't for one second get butt hurt. And for the rest of you you know I got nothing but love!
+
   
+ ## Whats next?
+  For the future of this app I have a couple things I want to impliment 
+  1. Deployment 
+    - manditory for actual use of the application 
+  2. Styling at a higher level 
+    - Things were overlooked in regards to styling and I'm not at all mad at that. With the future in mind I believe a larger crowd will be aquired with       tactical styling that appeals to all in a non abrasive way
+  3. Authorization
+    - Users to have the ability to see exactly what they have posted and then through the addition of users the workout pool will grow until everyone and find a workout they can accomplish with their own wants and needs in mind. 
   
   
  
