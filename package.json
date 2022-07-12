@@ -1,0 +1,22 @@
+{
+  "name": "fitness_programmer",
+  "description": "a really cool app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dajs64/fitness_programmer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dajs64/fitness_programmer/issues"
+  },
+  "homepage": "https://github.com/dajs64/fitness_programmer#readme"
+}
